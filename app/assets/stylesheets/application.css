@@ -13,3 +13,139 @@
  *= require_tree .
  *= require_self
  */
+
+ *{
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+
+ body{
+   margin: 0px auto;
+   padding: 0px auto;
+ }
+
+ form input[type=submit] {
+     margin-left:5px;
+     margin-top:5px;
+     border:0 none;
+     cursor:pointer;
+ }
+
+ .top nav ul{
+ width: 100%;
+ text-align:left;
+ }
+
+ .top nav ul {
+ display: inline-block;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ background-color: #000;
+ }
+
+ .top nav ul li {
+ float: left;
+ width: 6%;
+ }
+
+ .top nav ul li:first-child {
+ color: #fff;
+ float: left;
+ width: 50%;
+ }
+
+ .top nav ul li:first-child > a{
+ font-size: 18px;
+ text-align: left;
+ }
+
+ .top nav ul li a {
+ display: block;
+ color: #fff;
+ font-size: 18px;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ }
+
+ .top nav ul li a:link{
+ text-decoration: none;
+ }
+
+ .top nav ul li a:hover:not(.active) {
+ color: #999;
+ }
+
+
+ .navigation nav ul {
+ display: inline-block;
+ list-style-type: none;
+ margin: 0;
+ padding: 0;
+ background-color: #fff;
+ }
+
+ .navigation nav ul li {
+ float: left;
+ }
+
+ .navigation nav ul li a {
+ display: block;
+ color: #000;
+ font-size: 18px;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+ }
+
+ .navigation nav ul li a:link{
+ text-decoration: none;
+ }
+
+ .navigation nav ul li a:hover:not(.active) {
+ background: #fff;
+ color: #999;
+ }
+
+ .active {
+ background-color: #4CAF50;
+ }
+
+ .search-left{
+   float:left;
+   text-align: right;
+   width:30%;
+ }
+
+ .search-left select{
+     height:29px;
+ }
+
+ .search-center{
+   float:left;
+   width:40%;
+ }
+
+ .search-right{
+   float:left;
+   width:30%;
+ }
+
+ .cart-left{
+   float:left;
+   text-align:right;
+   width:50%
+ }
+
+ .cart-right{
+   float:left;
+   text-align:center;
+   width:50%;
+   color:#fff;
+   font-size:14px;
+   margin-top:18px;
+ }
+
+ .right{
+   float: right;
+ }

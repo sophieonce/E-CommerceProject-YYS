@@ -1,0 +1,29 @@
+<header>
+<div class="top">
+<nav>
+<ul>
+<li>
+<%= link_to 'YYS Shop', products_path %>
+</li>
+
+
+
+
+
+</nav>
+</div>
+
+<div class="navigation">
+<nav>
+<ul>
+<li>
+<%= link_to 'Home', products_path %>
+</li>
+<% Category.all.each do |category| %>
+<li>
+<%= link_to category.name, category_path(category) %>
+</li>
+<% end %>
+</nav>
+</div>
+</header>

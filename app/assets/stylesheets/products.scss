@@ -1,3 +1,102 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.homepage_products{
+width: 80%;
+margin: 0 auto;
+padding: 0 auto;
+}
+
+.homepage_products h2{
+ margin-bottom: 40px;
+ margin-top: 20px;
+}
+
+.nav-bar{
+  margin-bottom: 60px;
+  margin-top: 20px;
+}
+
+.homepage_products a{
+  text-decoration: none;
+}
+
+.homepage_product
+{
+display: inline-block;
+float: left;
+width: 250px;
+height:320px;
+border:1px solid #ddd;
+margin-right:20px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+
+.homepage_product img{
+width:210px;
+height:210px;
+padding: 20px;
+}
+
+.homepage_product a{
+text-decoration: none;
+}
+
+.product_detail{
+  width: 100%;
+  position: relative;
+
+}
+
+.product_detail_left{
+  width: 50%;
+  float: left;
+}
+
+.product_detail_left img{
+ width:400px;
+ height: 400px;
+}
+
+.product_detail_right{
+  width: 50%;
+  float: left;
+}
+
+nav{
+  text-align: center;
+  width:100%;
+}
+
+.result{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.notice{
+  color:red;
+  font-size: 14px;
+}
+
+.button {
+  display: block;
+  width: 115px;
+  height: 25px;
+  background: #000;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.button a{
+  color: #fff;
+  text-decoration: none;
+}

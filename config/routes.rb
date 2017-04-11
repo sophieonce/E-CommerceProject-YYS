@@ -45,6 +45,11 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
 
+  #CREATE address
+  get 'addresses/new'  =>'addresses#new', as: 'new_address'
+  post 'addresses'     =>'addresses#create'
+
+
 
   root to: 'products#index'
 

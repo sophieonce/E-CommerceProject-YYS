@@ -1,2 +1,15 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<div class="homepage_products">
+<h2><%= @category.name %></h2>
+
+<% @products.each do |product| %>
+<div class="homepage_product">
+
+<% if product.image.present? %>
+<p><%= link_to image_tag(product.image), product_path(product) %></p>
+<% end %>
+
+<p><%= link_to product.name, product_path(product) %></p>
+</div>
+<% end %>
+<%= paginate @products %>
+</div>

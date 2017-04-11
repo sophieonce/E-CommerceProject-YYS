@@ -1,2 +1,14 @@
-<h1>Products#index</h1>
-<p>Find me in app/views/products/index.html.erb</p>
+<div class="homepage_products">
+<h2>All Products</h2>
+
+<% if @products.blank? %>
+<h4 class="result">Your search for "<%= params[:search] %>" did not matching any results.</h4>
+<% end %>
+
+<% if params[:search] and @products.count > 0 %>
+<h4 class="result">Your search for "<%= params[:search] %>" showed the following:</h4>
+<% end %>
+
+<%= render partial: 'product', collection: @products %>
+<%= paginate @products %>
+</div>

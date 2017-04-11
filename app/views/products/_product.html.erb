@@ -1,0 +1,8 @@
+<div class="homepage_product">
+
+<% if product.image.present? %>
+<p><%= link_to image_tag(product.image), product_path(product) %></p>
+<% end %>
+
+<p><%= link_to product.name, product_path(product) %></p>
+</div>

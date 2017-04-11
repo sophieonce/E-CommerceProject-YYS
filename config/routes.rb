@@ -23,6 +23,15 @@ Rails.application.routes.draw do
   delete 'carts/:id'  =>'carts#destroy',as: 'destroy_item', id: /\d+/
 
 
+  # SHOW customers: welcome message
+  get 'customers/:id' => 'customers#show', as: 'customer', id: /\d+/
+
+  #CREATE customer
+  get 'customers/new'  =>'customers#new', as: 'new_customer'
+  post 'customers'     =>'customers#create'
+
+
+
   root to: 'products#index'
 
 

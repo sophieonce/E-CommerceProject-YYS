@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   get 'carts/index'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

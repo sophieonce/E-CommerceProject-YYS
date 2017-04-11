@@ -1,3 +1,74 @@
 // Place all the styles related to the carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.my_cart{
+width: 80%;
+margin: 0 auto;
+padding: 0 auto;
+}
+
+.my_cart h2{
+  margin-top: 20px;
+}
+
+.mgs{
+  text-align: center;
+  font-size: 14px;
+}
+
+table.cart_summary {
+  width: 100%;
+}
+
+
+table.cart_summary td,th {
+  text-align: left;
+}
+
+table.cart_summary img{
+  width:50px;
+  height: 50px;
+}
+
+table.cart_summary input{
+  width: 30px;
+  text-align: center;
+}
+
+table.subtotal{
+  width: 100%;
+}
+
+table.subtotal th, td {
+  text-align: right;
+}
+
+table.subtotal tr:last-child{
+  font-size: 18px;
+}
+
+.remove input[type=submit]{
+  width: 70px;
+}
+
+.button{
+  display: block;
+  text-decoration: none;
+  width:100px;
+  height: 32px;
+  background-color: #ddd;
+ text-align: center;
+  border: 1px solid #CCCCCC;
+  border-radius: 5px;
+  padding-top: 10px;
+}
+
+.button a{
+  text-decoration: none;
+  font-size: 14px;
+}

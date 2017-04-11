@@ -37,6 +37,12 @@ Rails.application.routes.draw do
   post 'customers'     =>'customers#create'
 
 
+  #login and logout
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+
 
   root to: 'products#index'
 

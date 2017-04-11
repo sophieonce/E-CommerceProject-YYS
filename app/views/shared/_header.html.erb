@@ -27,10 +27,14 @@
 </div>
 </li>
 
-
 <li>
-<%= link_to 'Login', new_customer_path %>
+<%= link_to 'Login', login_path %>
 </li>
+<% if current_user %>
+<li>
+<%= link_to 'Logout', logout_path %>
+</li>
+<% end %>
 
 
 </nav>

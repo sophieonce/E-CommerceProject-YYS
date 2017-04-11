@@ -1,2 +1,25 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="homepage_products">
+  <% if flash[:alert] %>
+  <p class="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+
+<%= form_tag '/login' do %>
+<fieldset>
+  <h2>Please Login</h2>
+  <div>
+    <p><%= label_tag :name, 'Name' %></p>
+    <p><%= text_field_tag :name %></p>
+    <p><%= label_tag :password, 'password' %></p>
+    <p><%= password_field_tag :password %></p>
+  </div>
+
+  <div>
+    <%= submit_tag 'Login' %>
+  </div>
+
+<p>New user? <%= link_to "Sign up now!", new_customer_path %></p>
+</fieldset>
+<% end %>
+
+</div>

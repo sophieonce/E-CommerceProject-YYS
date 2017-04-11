@@ -1,2 +1,8 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class="homepage_products">
+<p class="nav-bar">
+  <%= link_to 'All Products', products_path %> &nbsp;&nbsp;>&nbsp;&nbsp;
+  <span><%= @product.name %></span>
+</p>
+
+<%= render partial: 'product_detail', object: @product %>
+</div>

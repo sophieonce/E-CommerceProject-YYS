@@ -1,0 +1,24 @@
+<div class="product_detail">
+<div class="product_detail_left">
+
+<% if product_detail.image.present? %>
+<p><%= link_to image_tag(product_detail.image), product_path(product_detail) %></p>
+<% end %>
+</div>
+
+<div class="product_detail_right">
+<h3><%= product_detail.name %></h3>
+<p>Price: $<%= product_detail.price %></p>
+<p><%= product_detail.description %></p>
+
+
+
+
+<% if flash[:notice]  %>
+<p class="notice">
+  <%= flash[:notice] %>
+</p>
+<% end %>
+
+</div>
+</div>

@@ -1,14 +1,4 @@
 Rails.application.routes.draw do
-  get 'addresses/new'
-
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  get 'sessions/destroy'
-
-  get 'carts/index'
-
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -45,9 +35,15 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
 
+  get 'addresses/:id' => 'addresses#show', as: 'address', id: /\d+/ 
+
   #CREATE address
   get 'addresses/new'  =>'addresses#new', as: 'new_address'
   post 'addresses'     =>'addresses#create'
+
+  # UPDATE Routes
+  get 'addresses/:id/edit'  =>'addresses#edit', as: 'edit_address', id: /\d+/
+  patch 'addresses/:id'     => 'addresses#update'
 
 
 

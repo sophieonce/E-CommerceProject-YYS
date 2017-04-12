@@ -12,4 +12,16 @@ ActiveAdmin.register Customer do
 #   permitted
 # end
 permit_params :name, :password_digest, :province_id
+
+index do
+  selectable_column
+  id_column
+  column :name
+  column :password_digest
+  column :province_id
+  column :created_at
+  actions
+end
+
+
 end

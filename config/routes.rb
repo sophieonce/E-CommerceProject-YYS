@@ -35,7 +35,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
 
 
-  get 'addresses/:id' => 'addresses#show', as: 'address', id: /\d+/ 
+  get 'addresses/:id' => 'addresses#show', as: 'address', id: /\d+/
 
   #CREATE address
   get 'addresses/new'  =>'addresses#new', as: 'new_address'

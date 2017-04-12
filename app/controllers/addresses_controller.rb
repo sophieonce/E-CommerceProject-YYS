@@ -27,6 +27,7 @@ class AddressesController < ApplicationController
     @address =  Address.find(params[:id])
 
   if @address.update(address_params)
+    flash[:notice] = "You Address has been updated!"
     redirect_to '/'
   else
     render :edit

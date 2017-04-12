@@ -48,6 +48,13 @@ Rails.application.routes.draw do
   patch 'addresses/:id'     => 'addresses#update'
 
 
+  #CREATE address
+  get 'orders/new'  =>'orders#new', as: 'new_order'
+  post 'orders'     =>'orders#create'
+
+
+
+
 
   root to: 'products#index'
 

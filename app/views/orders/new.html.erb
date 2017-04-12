@@ -1,0 +1,107 @@
+<div class="homepage_products">
+<h2>Invoice</h2>
+<%= form_for(@order) do |f| %>
+<% if @order.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@order.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+    <ul>
+    <% address.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% total = 0 %>
+
+<%= f.hidden_field :customer_id, :value => current_user.id %>
+<table class="cart_summary">
+<tr>
+<th colspan="2" >Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Total</th>
+</tr>
+
+<tr>
+<td colspan="6">
+<hr>
+</td>
+</tr>
+
+<% @cart.each do |cart_id, qty| %>
+<% cartid =  cart_id.to_i() %>
+<% p = Product.find(cartid) %>
+<tr>
+
+<% if p.image.present? %>
+<td>
+<p><%= image_tag(p.image) %></p>
+</td>
+<% end %>
+
+<td>
+<p><%= p.name %></p>
+</td>
+
+<td>
+<p>$ <%= p.price %></p>
+</td>
+
+<td>
+<p>$ <%= qty %></p>
+</td>
+
+<td>
+<p>$ <%= p.price*qty %></p>
+</td>
+</tr>
+
+<tr>
+<td colspan="6">
+<hr>
+</td>
+</tr>
+<% total += qty*p.price %>
+
+<% end %>
+
+</table>
+
+
+<table class="subtotal">
+
+<tr>
+<td>Subtotal</td>
+<td>$<%= total %></td>
+</tr>
+
+<% province_id = current_user.addresses.first.province_id %>
+<% province = Province.find(province_id) %>
+<% tax_rate = province.pst +  province.hst + 0.05 %>
+
+<% tax = total * tax_rate %>
+<% totalall = total * ( 1 + tax_rate ) %>
+
+<tr>
+<td>Tax</td>
+<td>$<%= tax %></td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td>$<%= totalall %></td>
+</tr>
+
+<%= f.hidden_field :status_id, :value => 1 %>
+<%= f.hidden_field :total, :value => totalall %>
+
+</table>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
+
+<% end %>
+</div>

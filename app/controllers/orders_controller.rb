@@ -59,7 +59,7 @@ class OrdersController < ApplicationController
                       :order_id  => @order.id,
                       :product_id => product.id)
       session[:cart] = nil
-      flash[:notice] = "Your Order has been places successfully, it will ship soon!"
+      flash[:notice] = "Your Order has paid successfully, it will ship to you soon!"
       redirect_to '/'
      end
      else

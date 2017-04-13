@@ -8,7 +8,7 @@
 
 <div class="product_detail_right">
 <h3><%= product_detail.name %></h3>
-<p>Price: $<%= product_detail.price %></p>
+<p>Price: <%= number_to_currency(product_detail.price) %></p>
 <p><%= product_detail.description %></p>
 
 

@@ -31,6 +31,7 @@ show :title => :name do
       column("Status")                  {|order| status_tag(order.status.name) }
       column("Date", :sortable => :created_at){|order| pretty_format(order.created_at) }
       column("Total")                   {|order| number_to_currency order.total}
+      column("Stripe Reference")        {|order| order.stripe }
     end
   end
 end

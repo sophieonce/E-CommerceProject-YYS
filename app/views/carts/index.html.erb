@@ -59,7 +59,7 @@ There is no item in your cart.
 </td>
 
 <td>
-<p>$ <%= p.price*qty %></p>
+<p><%= number_to_currency(p.price*qty) %></p>
 </td>
 </tr>
 
@@ -83,7 +83,7 @@ There is no item in your cart.
 
 <tr>
 <td>Subtotal</td>
-<td>$<%= total %></td>
+<td><%= number_to_currency(total) %></td>
 </tr>
 </table>
 

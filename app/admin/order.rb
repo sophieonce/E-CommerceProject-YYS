@@ -11,10 +11,8 @@ ActiveAdmin.register Order do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-permit_params :total, :status_id, :customer_id
+permit_params :total, :status_id, :customer_id, :stripe
 
-  filter :price
-  filter :created_at
 
   index do
   column("Order", :sortable => :id) {|order| link_to "##{order.id} ", admin_order_path(order) }
@@ -22,6 +20,7 @@ permit_params :total, :status_id, :customer_id
   column("Date", :created_at)
   column("Customer", :customer, :sortable => :customer_id)
   column("Total")                   {|order| number_to_currency order.total }
+  column("Stripe Reference")        {|order| order.stripe }
   end
 
 

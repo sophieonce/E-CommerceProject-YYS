@@ -15,7 +15,6 @@
 
 <% total = 0 %>
 
-<%= f.hidden_field :customer_id, :value => current_user.id %>
 <table class="cart_summary">
 <tr>
 <th colspan="2" >Product</th>
@@ -74,7 +73,7 @@
 
 <tr>
 <td>Subtotal</td>
-<td>$<%= total %></td>
+<td><%= number_to_currency(total) %></td>
 </tr>
 
 <% province_id = current_user.addresses.first.province_id %>
@@ -86,22 +85,31 @@
 
 <tr>
 <td>Tax</td>
-<td>$<%= tax %></td>
+<td><%= number_to_currency(tax) %></td>
 </tr>
 
 <tr>
 <td>Total</td>
-<td>$<%= totalall %></td>
+<td><%= number_to_currency(totalall) %></td>
 </tr>
 
-<%= f.hidden_field :status_id, :value => 1 %>
-<%= f.hidden_field :total, :value => totalall %>
 
 </table>
 
-<div class="actions">
-  <%= f.submit %>
-</div>
+<article>
+  <% if flash[:error].present? %>
+    <div id="error_explanation">
+      <p><%= flash[:error] %></p>
+    </div>
+  <% end %>
+</article>
+
+<script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+        data-description=<%= @description %>
+        data-amount=<%= @amount %>
+        data-locale="auto">
+</script>
 
 <% end %>
 </div>

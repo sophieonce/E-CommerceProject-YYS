@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   get 'addresses/new'  =>'addresses#new', as: 'new_address'
   post 'addresses'     =>'addresses#create'
 
-  # UPDATE Routes
+  # UPDATE address
   get 'addresses/:id/edit'  =>'addresses#edit', as: 'edit_address', id: /\d+/
   patch 'addresses/:id'     => 'addresses#update'
 
@@ -57,7 +57,8 @@ Rails.application.routes.draw do
   post 'orders'     =>'orders#create'
 
 
-
+  #
+  resources :charges, only: [:new, :create]
 
 
   root to: 'products#index'

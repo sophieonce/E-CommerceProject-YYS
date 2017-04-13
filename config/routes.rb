@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charges/new'
+
+  get 'charges/create'
+
   get 'orders/add'
 
   devise_for :admin_users, ActiveAdmin::Devise.config

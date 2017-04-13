@@ -59,3 +59,5 @@ gem 'devise'
 gem 'carrierwave', '~> 1.0'
 
 gem 'kaminari'
+
+gem 'stripe'

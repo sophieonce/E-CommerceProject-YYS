@@ -48,7 +48,7 @@ Rails.application.routes.draw do
   patch 'addresses/:id'     => 'addresses#update'
 
 
-  #CREATE address
+  #CREATE order
   get 'orders/new'  =>'orders#new', as: 'new_order'
   post 'orders'     =>'orders#create'
 

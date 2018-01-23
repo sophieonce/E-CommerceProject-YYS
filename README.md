@@ -14,12 +14,12 @@ An Ruby on Rails E-Commerce website to sell Asian beauty products in Canada only
   - Administrator can create and assign categories to new or existing products
 
 - **Product Order:**
-  - **For customer**:**
+  - **For customers**
     - Sign up and sign in with username and password
     - Can save address details for future orders
     - Add products to cart and be able to edit shopping cart
     - Can complete checkout and payment process by using credit card after filling shopping cart
-  - **For administrator:**
+  - **For administrators**
     - Dashboard list all customers along with their order details
     - Be able to change the status of outstanding orders to paid or shipped
 
